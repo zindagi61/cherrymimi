@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHERRY | CYBER SECURITY EXPORT</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Share Tech Mono',monospace;background:#020203;color:#e8fff5;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Orbitron',sans-serif}
+.bg{position:fixed;inset:0;z-index:-3;background:url('gallery/image_20261111_171726.webp') center/cover no-repeat}
+.bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(2,0,20,.88),rgba(0,0,0,.92))}
+#matrix{position:fixed;inset:0;z-index:-2;opacity:.35}
+.scan{position:fixed;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(0,255,200,.12),transparent);z-index:10;pointer-events:none;animation:scan 4s linear infinite}
+@keyframes scan{0%{top:-20%}100%{top:110%}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px #00ffcc,0 0 40px #ff2d95}50%{box-shadow:0 0 40px #00ffcc,0 0 70px #ff2d95}}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:10px 5%;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);border-bottom:1px solid #00ffcc}
+.logo{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900;letter-spacing:1px;color:#fff;line-height:1}
+.logo span{color:#00ffcc;text-shadow:0 0 15px #00ffcc}
+.logo small{display:block;font-size:9px;letter-spacing:4px;color:#ff2d95;font-family:'Share Tech Mono',monospace}
+.logo-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #00ffcc;box-shadow:0 0 18px #00ffcc,0 0 25px #ff2d95;animation:float 3s ease-in-out infinite}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:13px;letter-spacing:1px}
+nav a:hover{color:#ff2d95}
+.btn{background:linear-gradient(90deg,#00ffcc,#ff2d95);color:#000!important;padding:10px 18px;border-radius:30px;font-weight:bold}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:130px 20px 60px}
+.hero-photo-wrap{position:relative;width:180px;height:180px;margin-bottom:20px}
+.hero-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #00ffcc;animation:glowPulse 2.5s infinite;position:relative;z-index:2}
+.hero-photo-wrap::before{content:'';position:absolute;inset:-12px;border-radius:50%;border:2px dashed #ff2d95;animation:spin 8s linear infinite}
+@keyframes spin{100%{transform:rotate(360deg)}}
+.badge{border:1px solid #00ffcc;padding:8px 18px;border-radius:30px;font-size:12px;letter-spacing:3px;color:#00ffcc;box-shadow:0 0 20px #00ffcc44}
+.hero h1{font-size:clamp(38px,7vw,82px);line-height:.95;margin:18px 0;text-shadow:0 0 30px #00ffcc,0 0 60px #ff2d95}
+.hero h1 span{color:transparent;-webkit-text-stroke:2px #00ffcc}
+.hero p{max-width:750px;color:#c8fff0;font-size:17px;line-height:1.7}
+.hero-btns{margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn2{padding:14px 28px;border:1px solid #00ffcc;color:#00ffcc;text-decoration:none;border-radius:6px}
+.btn2.pink{border-color:#ff2d95;color:#ff2d95}
+.stats{display:flex;gap:18px;margin-top:40px;flex-wrap:wrap;justify-content:center}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(0,255,204,.4);padding:16px 20px;border-radius:12px;min-width:140px}
+.stat b{font-size:24px;color:#00ffcc;display:block}
+.stat span{font-size:11px;opacity:.8}
+section{padding:80px 6%}
+.sec-title{font-size:32px;margin-bottom:8px}
+.sec-title span{color:#ff2d95}
+.sec-sub{opacity:.75;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:rgba(0,10,15,.75);border:1px solid #00ffcc55;padding:26px;border-radius:16px;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:#ff2d95;box-shadow:0 0 30px #ff2d9555}
+.card h3{color:#00ffcc;margin:12px 0 8px}
+.card p{font-size:14px;line-height:1.6;opacity:.85}
+.national{background:linear-gradient(135deg,rgba(0,255,204,.12),rgba(255,45,149,.12));border-top:1px solid #00ffcc;border-bottom:1px solid #ff2d95;text-align:center}
+.national-logo{width:135px;height:135px;margin:0 auto 18px;border-radius:50%;overflow:hidden;border:3px solid #00ffcc;box-shadow:0 0 40px #00ffcc88;animation:float 3s ease-in-out infinite}
+.national-logo img{width:100%;height:100%;object-fit:cover}
+.national h2{font-size:36px;letter-spacing:2px}
+.national h2 span{color:#00ffcc}
+.shield-box{max-width:800px;margin:25px auto;background:#000000aa;border:1px solid #ffffff33;padding:22px;border-radius:14px;line-height:1.8}
+.login-wrap{max-width:420px;margin:0 auto;background:rgba(0,0,0,.8);border:1px solid #00ffcc;padding:32px;border-radius:18px;box-shadow:0 0 40px #00ffcc33;text-align:center}
+.login-wrap input{width:100%;padding:14px;margin:14px 0;background:#03110d;border:1px solid #00ffcc;color:#fff;outline:none;border-radius:8px}
+.login-wrap button{width:100%;padding:14px;background:#00ffcc;border:none;font-weight:900;letter-spacing:2px;cursor:pointer;border-radius:8px}
+.login-wrap button:hover{background:#ff2d95;color:#fff}
+#error{color:#ff2d95;margin-top:12px;display:none}
+#dashboard{display:none}
+.tool-card{background:#050a12;border:1px solid #ff2d9555;padding:20px;border-radius:14px}
+.tool-card h3{color:#fff}
+.tool-card p{font-size:13px;opacity:.8;margin:8px 0 14px;line-height:1.5}
+.tool-card button{display:inline-block;padding:9px 16px;background:#00ffcc;color:#000;border:none;border-radius:6px;font-weight:bold;cursor:pointer}
+.add-box{border:2px dashed #00ffcc;padding:20px;border-radius:14px;text-align:center}
+.add-box input{width:100%;padding:11px;margin:8px 0;background:#000;border:1px solid #333;color:#fff;border-radius:6px}
+footer{text-align:center;padding:30px;opacity:.6;font-size:13px;border-top:1px solid #222}
+.terminal{max-width:800px;margin:30px auto 0;background:#000;border:1px solid #00ffcc;padding:18px;border-radius:10px;text-align:left;font-size:14px;line-height:1.8;color:#00ffcc}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<canvas id="matrix"></canvas>
+<div class="scan"></div>
+
+<nav>
+  <div class="logo">
+    <img src="gallery/image_20261111_171726.webp" class="logo-photo" alt="Cherry">
+    <div>CHERRY <span>◆ CYBER</span><small>SECURITY EXPORT</small></div>
+  </div>
+  <div>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#national">NATIONAL SECURITY</a>
+    <a href="#services">SERVICES</a>
+    <a href="#login" class="btn">SECURE LOGIN</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-photo-wrap">
+    <img src="gallery/image_20261111_171726.webp" class="hero-photo" alt="Cherry - Cyber Security Expert">
+  </div>
+  <div class="badge">● SYSTEM ONLINE // SECURE CONNECTION ESTABLISHED</div>
+  <h1>CHERRY<br><span>CYBER SECURITY</span><br>EXPORT</h1>
+  <p><b>Hello, I'm CHERRY.</b> I am a Cyber Security Expert. I protect businesses, websites & data from hackers, malware and cyber attacks. My mission is simple — <b>Make the internet safer, stronger & smarter.</b></p>
+  <div class="hero-btns">
+    <a href="#about" class="btn2">EXPLORE PROFILE →</a>
+    <a href="#login" class="btn2 pink">ENTER SECURE PANEL 🔒</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>100+</b><span>PROJECTS SECURED</span></div>
+    <div class="stat"><b>24/7</b><span>THREAT MONITORING</span></div>
+    <div class="stat"><b>100%</b><span>CLIENT TRUST</span></div>
+    <div class="stat"><b>EXPORT</b><span>GLOBAL SERVICES</span></div>
+  </div>
+  <div class="terminal">
+    <div>> initializing cherry_secure_system.exe ... <span style="color:#fff">OK</span></div>
+    <div>> scanning threats ... <span style="color:#fff">0 THREATS FOUND</span></div>
+    <div>> firewall: <span style="color:#fff">ACTIVE</span> | encryption: <span style="color:#fff">AES-256</span></div>
+    <div style="color:#ff2d95">> Welcome, Guest. Access granted to public profile_</div>
+  </div>
+</header>
+
+<section id="about">
+  <h2 class="sec-title">ABOUT <span>CHERRY</span></h2>
+  <p class="sec-sub">Introduction — Who am I & What do I do?</p>
+  <div class="grid">
+    <div class="card"><h3>🛡️ Who Am I?</h3><p>I am <b>CHERRY</b>, founder of <b>CHERRY CYBER SECURITY EXPORT</b>. I specialize in Ethical Hacking, Website Security, Data Protection & Cyber Defence for international clients.</p></div>
+    <div class="card"><h3>🎯 My Mission</h3><p>To provide world-class cyber security export services from Pakistan to the world — secure, affordable and 100% professional.</p></div>
+    <div class="card"><h3>💻 What I Do</h3><p>Penetration Testing, Website Hardening, Malware Removal, Security Audits, Bug Bounty Support & Security Consulting.</p></div>
+  </div>
+</section>
+
+<section class="national" id="national">
+  <div class="national-logo"><img src="gallery/image_20261111_171726.webp" alt="Cherry - National Cyber Security"></div>
+  <h2>NATIONAL <span>CYBER SECURITY</span></h2>
+  <p style="letter-spacing:3px;opacity:.8;margin-top:8px">PROTECT • DEFEND • SECURE THE NATION</p>
+  <div class="shield-box">
+    <h3 style="color:#00ffcc;margin-bottom:10px">🇵🇰 NATIONAL CYBER DEFENCE INITIATIVE</h3>
+    <p>We stand for a safe and strong digital Pakistan. This section is dedicated to national cyber awareness, data protection, safe internet practices and defending our digital borders against cyber threats.</p>
+    <p style="margin-top:12px"><b>Our Promise:</b> No data breach. No compromise. Only protection.</p>
+  </div>
+  <div class="grid" style="max-width:900px;margin:0 auto;text-align:left">
+    <div class="card"><h3>🔐 Data Protection</h3><p>National data, citizen privacy & government systems ko secure rakhna hamari priority hai.</p></div>
+    <div class="card"><h3>⚠️ Cyber Awareness</h3><p>Phishing, scams aur fake links se bachne ke liye awareness campaigns.</p></div>
+    <div class="card"><h3>🌐 Digital Defence</h3><p>24/7 monitoring aur rapid response for national cyber threats.</p></div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="sec-title">MY <span>SERVICES</span></h2>
+  <p class="sec-sub">Professional Cyber Security Export Services — Worldwide</p>
+  <div class="grid">
+    <div class="card"><h3>🔍 Penetration Testing</h3><p>Website / App ki kamzoriyan dhoond kar fix karna, pehle ke hacker attack kare.</p></div>
+    <div class="card"><h3>🦠 Malware Removal</h3><p>Hacked website ko clean karna, virus remove karna aur full security restore karna.</p></div>
+    <div class="card"><h3>🌐 Website Security</h3><p>WordPress, Shopify, Custom Websites ke liye complete hardening & firewall setup.</p></div>
+    <div class="card"><h3>📊 Security Audit</h3><p>Full detailed report — kahan risk hai, kya fix karna hai, kaise secure rahena hai.</p></div>
+  </div>
+</section>
+
+<section id="login">
+  <h2 class="sec-title" style="text-align:center">SECURE <span>LOGIN</span></h2>
+  <p class="sec-sub" style="text-align:center">Only Authorized Access — Private Tools Panel</p>
+  <div class="login-wrap" id="loginBox">
+    <img src="gallery/image_20261111_171726.webp" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #00ffcc" alt="Cherry">
+    <h3 style="margin-top:12px">CHERRY SECURE PANEL</h3>
+    <p style="font-size:13px;opacity:.7">Enter password to access private tools</p>
+    <input type="password" id="pass" placeholder="Enter Password">
+    <button onclick="checkPass()">UNLOCK PANEL →</button>
+    <div id="error">❌ Wrong Password! Access Denied.</div>
+  </div>
+  <div id="dashboard">
+    <h2 class="sec-title" style="text-align:center">WELCOME BACK, <span>CHERRY 👑</span></h2>
+    <p class="sec-sub" style="text-align:center">Your Private Security Tools Dashboard</p>
+    <div class="grid" id="toolsGrid">
+      <div class="tool-card"><h3>🛠️ Tool 01 — Coming Soon</h3><p>Yahan tum apna pehla tool add karogi.</p><button>OPEN TOOL</button></div>
+      <div class="tool-card"><h3>🛠️ Tool 02 — Coming Soon</h3><p>Yahan dusra tool ayega.</p><button>OPEN TOOL</button></div>
+      <div class="tool-card"><h3>🛠️ Tool 03 — Coming Soon</h3><p>Yahan teesra tool ayega.</p><button>OPEN TOOL</button></div>
+      <div class="add-box">
+        <h3 style="color:#00ffcc">+ ADD NEW TOOL</h3>
+        <input type="text" id="toolName" placeholder="Tool ka naam likho...">
+        <input type="text" id="toolLink" placeholder="Tool ka link paste karo...">
+        <button onclick="addTool()" style="padding:12px 20px;background:#ff2d95;color:#fff;border:none;border-radius:8px;font-weight:bold;cursor:pointer">ADD TOOL +</button>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:25px"><button onclick="logout()" style="padding:12px 25px;background:#222;color:#fff;border:1px solid #fff;border-radius:30px;cursor:pointer">LOGOUT</button></div>
+  </div>
+</section>
+
+<footer>© 2026 CHERRY CYBER SECURITY EXPORT | Designed by CHERRY | All Rights Reserved</footer>
+
+<script>
+const c=document.getElementById('matrix'); const ctx=c.getContext('2d');
+c.width=innerWidth; c.height=innerHeight;
+const chars='01CHERRYSECURE<>/\\#*'; const cols=Math.floor(c.width/16); const drops=Array(cols).fill(1);
+function draw(){ctx.fillStyle='rgba(0,0,0,0.08)';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#00ffcc';ctx.font='14px monospace';for(let i=0;i<drops.length;i++){const t=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(t,i*16,drops[i]*16);if(drops[i]*16>c.height && Math.random()>0.975)drops[i]=0;drops[i]++;}}
+setInterval(draw,50);
+function checkPass(){
+  const p=document.getElementById('pass').value;
+  if(p==='MIMI757275'){
+    document.getElementById('loginBox').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    document.getElementById('dashboard').scrollIntoView({behavior:'smooth'});
+  } else { document.getElementById('error').style.display='block'; }
+}
+document.getElementById('pass').addEventListener('keypress',e=>{if(e.key==='Enter') checkPass()});
+function logout(){document.getElementById('dashboard').style.display='none';document.getElementById('loginBox').style.display='block';document.getElementById('pass').value='';}
+function addTool(){
+  const name=document.getElementById('toolName').value||'My New Tool';
+  const link=document.getElementById('toolLink').value||'#';
+  const div=document.createElement('div');div.className='tool-card';
+  div.innerHTML=`<h3>🛠️ ${name}</h3><p>Added by CHERRY — Private Tool</p><a href="${link}" target="_blank" style="display:inline-block;padding:9px 16px;background:#00ffcc;color:#000;text-decoration:none;border-radius:6px;font-weight:bold">OPEN TOOL</a>`;
+  document.getElementById('toolsGrid').prepend(div);
+  document.getElementById('toolName').value='';document.getElementById('toolLink').value='';
+  alert('Tool Added Successfully!');
+}
+</script>
+</body>
+</html>
